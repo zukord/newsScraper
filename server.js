@@ -12,7 +12,7 @@ var cheerio = require("cheerio");
 // Require all models
 var db = require("./models");
 
-var PORT = 3000;
+var PORT = (process.env.PORT || 3000);
 
 // Initialize Express
 var app = express();
@@ -46,7 +46,7 @@ app.get("/scrape", function(req, res) {
     var $ = cheerio.load(response.data);
 
     // Now, we grab every h2 within an article tag, and do the following:
-    $("a.overlay").each(function(i, element) {
+    $("li.").each(function(i, element) {
       // Save an empty result object
       var result = {};
 
