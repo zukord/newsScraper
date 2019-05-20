@@ -1,6 +1,5 @@
-app.engine('handlebars', exphbs());
-app.set('view engine', 'handlebars');
 
+$(document).ready(function() {
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
   // For each one
@@ -9,6 +8,7 @@ $.getJSON("/articles", function(data) {
     $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
   }
 });
+})
 
 
 // Whenever someone clicks a p tag
