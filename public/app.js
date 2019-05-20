@@ -1,3 +1,6 @@
+app.engine('handlebars', exphbs());
+app.set('view engine', 'handlebars');
+
 // Grab the articles as a json
 $.getJSON("/articles", function(data) {
   // For each one
